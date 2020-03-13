@@ -1,0 +1,389 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.1.45",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Arma",
+            "nodes" : [
+                0
+            ]
+        },
+        {
+            "name" : "Player"
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "energy rifle"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "main_body",
+            "normalTexture" : {
+                "index" : 0,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 2,
+                    "texCoord" : 0
+                }
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
+            "emissiveTexture" : {
+                "index" : 3,
+                "texCoord" : 0
+            },
+            "name" : "front",
+            "normalTexture" : {
+                "index" : 4,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 5,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 6,
+                    "texCoord" : 0
+                }
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0,
+                0,
+                0
+            ],
+            "name" : "sights",
+            "normalTexture" : {
+                "index" : 7,
+                "texCoord" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 8,
+                    "texCoord" : 0
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 9,
+                    "texCoord" : 0
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "energy rifle",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "indices" : 11,
+                    "material" : 2
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        },
+        {
+            "source" : 2
+        },
+        {
+            "source" : 3
+        },
+        {
+            "source" : 4
+        },
+        {
+            "source" : 5
+        },
+        {
+            "source" : 6
+        },
+        {
+            "source" : 7
+        },
+        {
+            "source" : 8
+        },
+        {
+            "source" : 9
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "main_body_Height",
+            "uri" : "main_body_Height.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "main_body_Base_Color",
+            "uri" : "main_body_Base_Color.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "main_body_Metallic-main_body_Roughness",
+            "uri" : "main_body_Metallic-main_body_Roughness.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "front_Emissive",
+            "uri" : "front_Emissive.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "front_Height",
+            "uri" : "front_Height.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "front_Base_Color",
+            "uri" : "front_Base_Color.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "front_Metallic-front_Roughness",
+            "uri" : "front_Metallic-front_Roughness.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "sights_Height",
+            "uri" : "sights_Height.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "sights_Base_Color",
+            "uri" : "sights_Base_Color.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "sights_Metallic-sights_Roughness",
+            "uri" : "sights_Metallic-sights_Roughness.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 6084,
+            "max" : [
+                0.05272851511836052,
+                0.11142054945230484,
+                -0.0021624956279993057
+            ],
+            "min" : [
+                -0.02800052985548973,
+                -0.11855354905128479,
+                -0.3989221751689911
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 6084,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 6084,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 16236,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 4065,
+            "max" : [
+                0.029812561348080635,
+                0.10066454857587814,
+                0.3138526380062103
+            ],
+            "min" : [
+                -0.029897015541791916,
+                -0.04394151642918587,
+                -0.02880151942372322
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 4065,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 4065,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 8598,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 2517,
+            "max" : [
+                0.022088566794991493,
+                0.12385955452919006,
+                0.295021116733551
+            ],
+            "min" : [
+                -0.018557006493210793,
+                0.10028204321861267,
+                -0.01269000954926014
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 2517,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 2517,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 7314,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 73008,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 73008,
+            "byteOffset" : 73008
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48672,
+            "byteOffset" : 146016
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32472,
+            "byteOffset" : 194688
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48780,
+            "byteOffset" : 227160
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48780,
+            "byteOffset" : 275940
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 32520,
+            "byteOffset" : 324720
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 17196,
+            "byteOffset" : 357240
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 30204,
+            "byteOffset" : 374436
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 30204,
+            "byteOffset" : 404640
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 20136,
+            "byteOffset" : 434844
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 14628,
+            "byteOffset" : 454980
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 469608,
+            "uri" : "EnergyRifle.bin"
+        }
+    ]
+}

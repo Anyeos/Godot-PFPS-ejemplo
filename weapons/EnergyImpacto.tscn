@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://weapons/EnergyBall.png" type="Texture" id=1]
+[ext_resource path="res://weapons/EnergyImpacto.gd" type="Script" id=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, -2, 0 )
+initial_velocity = 2.0
+initial_velocity_random = 0.3
+scale_curve = SubResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+params_specular_mode = 4
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 0.3, 0.3 )
+
+[node name="Impacto" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+light_color = Color( 0.823529, 0.65098, 0.188235, 1 )
+light_energy = 0.2
+light_specular = 0.8
+light_bake_mode = 0
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="Impacto" type="Particles" parent="."]
+emitting = false
+amount = 5
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB( -1, -1, -1, 2, 2, 2 )
+local_coords = false
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 5 )
