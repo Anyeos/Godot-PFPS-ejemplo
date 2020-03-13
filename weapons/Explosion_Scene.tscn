@@ -1,0 +1,123 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://weapons/explosion.png" type="Texture" id=2]
+[ext_resource path="res://weapons/EnergyBall.png" type="Texture" id=3]
+[ext_resource path="res://weapons/Explosion.gd" type="Script" id=4]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.333333, 0.131818 ), 0.0, 0.0, 0, 0, Vector2( 0.741573, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+direction = Vector3( 0, 0, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+angular_velocity_random = 0.1
+scale = 15.0
+scale_curve = SubResource( 2 )
+color = Color( 0.760784, 0.0666667, 0.0666667, 1 )
+anim_speed = 1.0
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+params_specular_mode = 4
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 3
+particles_anim_h_frames = 4
+particles_anim_v_frames = 4
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 0.220974, 31.9091 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 8.0
+initial_velocity_random = 0.3
+angular_velocity_curve = SubResource( 7 )
+linear_accel = -3.0
+tangential_accel = 30.0
+tangential_accel_random = 0.1
+scale_curve = SubResource( 9 )
+
+[sub_resource type="SpatialMaterial" id=11]
+flags_transparent = true
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+params_specular_mode = 4
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=12]
+material = SubResource( 11 )
+size = Vector2( 0.3, 0.3 )
+
+[sub_resource type="SphereShape" id=13]
+radius = 5.0
+
+[node name="Explosion" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+light_color = Color( 0.854902, 0.721569, 1, 1 )
+light_energy = 0.7
+light_bake_mode = 0
+shadow_enabled = true
+omni_range = 60.0
+omni_attenuation = 4.0
+
+[node name="ExploCorona" type="Particles" parent="."]
+emitting = false
+amount = 1
+one_shot = true
+speed_scale = 3.0
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 5 )
+
+[node name="Chispas" type="Particles" parent="."]
+emitting = false
+amount = 25
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB( -5, -5, -5, 10, 10, 10 )
+local_coords = false
+process_material = SubResource( 10 )
+draw_pass_1 = SubResource( 12 )
+
+[node name="Blast_Area" type="Area" parent="."]
+input_ray_pickable = false
+angular_damp = 1.0
+
+[node name="Collision_Shape" type="CollisionShape" parent="Blast_Area"]
+shape = SubResource( 13 )
+
+[node name="RayCast" type="RayCast" parent="Blast_Area"]
+cast_to = Vector3( 0, 0, -5 )
