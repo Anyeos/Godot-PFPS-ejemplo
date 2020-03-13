@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://level/Objetos/chispas.png" type="Texture" id=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.279893 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+direction = Vector3( 0, -1, 0 )
+spread = 90.0
+gravity = Vector3( 0, 0, 0 )
+scale_curve = SubResource( 2 )
+anim_offset = 1.0
+anim_offset_random = 0.44
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
+params_specular_mode = 4
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 8
+particles_anim_v_frames = 1
+particles_anim_loop = true
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 0.5, 0.5 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Chispa" type="Particles" parent="."]
+amount = 1
+lifetime = 0.1
+explosiveness = 0.71
+visibility_aabb = AABB( -4, -6.19269, -4.37212, 8, 12.3854, 8.74424 )
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 5 )
